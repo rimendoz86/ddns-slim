@@ -1,0 +1,7 @@
+[
+    {
+        "Hostname": "recks.pw",
+        "TestURL": "https://recks.pw/2020/01/24/method-of-the-week-obect-assign-javascript/",
+        "Endpoint": "https://username123:password123@domains.google.com/nic/update?hostname=recks.pw&myip=$myip"
+    }
+]
