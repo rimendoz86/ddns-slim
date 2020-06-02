@@ -27,6 +27,7 @@ export class Analysis {
         this.Sites.forEach(dnsEntry => { this.Analysis(dnsEntry) });
     }
 
+    // The Analysis method has the async keyword to use the await keyword when we use our promise methods. 
     async Analysis(site: Site) {
         // Check if the site responds without errors and bail the method if successful
         var IsSiteUp = await new Http<string>(site.TestURL).Get()

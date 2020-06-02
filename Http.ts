@@ -11,11 +11,13 @@ export class Http<T> {
     };
 
     constructor(url: string) {
+        // If the string contains 'https' the https module will be used, otherwise the http module will be used.
         this.Request = url.indexOf('https') < 0 ? httpDependancy : httpsDependancy;
         this.Url = url;
     }
 
     Get() {
+        // By using a Generic in our promise, the intellisense will be more aware of our intent.
         return new Promise<T>((resolve, reject) => {
             this.Request.get(this.Url, this.Options, res => {
                 if (!this.isSuccess(res.statusCode)) reject(res.statusMessage);
@@ -38,6 +40,7 @@ export class Http<T> {
     }
 
     JsonTryParse(json: any) {
+        // Attempt to parse the json response, otherwise send the raw response.
         let model
         try {
             model = JSON.parse(json);
