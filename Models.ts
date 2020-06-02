@@ -18,10 +18,12 @@ export class Site {
 
 export class Log
 {
+    public CreatedOn: Date;
     public Severity: Severity;
     public Message: string;
     public Details: string;
     constructor(severity: Severity, message: string, details: string = ''){
+        this.CreatedOn = new Date();
         this.Severity = severity;
         this.Message = message;
         this.Details = details;
